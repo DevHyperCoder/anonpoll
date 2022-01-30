@@ -2,6 +2,9 @@
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
   "newProjectRoot": "projects",
+  "cli": {
+    "packageManager": "yarn"
+  },
   "projects": {
     "anonpoll": {
       "projectType": "application",
@@ -97,6 +100,16 @@
               "src/styles.css"
             ],
             "scripts": []
+          }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "prerender": false,
+            "ssr": false,
+            "browserTarget": "anonpoll:build:production",
+            "firebaseProject": "anonpoll-dhc",
+            "firebaseHostingSite": "anonpoll-dhc"
           }
         }
       }

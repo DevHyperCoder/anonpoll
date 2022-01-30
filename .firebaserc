@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "anonpoll-dhc": {
+      "hosting": {
+        "anonpoll": [
+          "anonpoll-dhc"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "anonpoll-dhc"
+  }
+}
