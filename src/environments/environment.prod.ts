@@ -8,5 +8,5 @@ export const environment = {
     authDomain: 'anonpoll-dhc.firebaseapp.com',
     messagingSenderId: '233234762302',
   },
-  production: true
+  production: true,
 };
