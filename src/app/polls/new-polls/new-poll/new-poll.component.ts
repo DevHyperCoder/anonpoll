@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component,  } from '@angular/core';
 import {
   FormArray,
   FormBuilder,
@@ -13,7 +13,7 @@ import { PollService } from '../../poll.service';
   selector: 'app-new-poll',
   templateUrl: './new-poll.component.html',
 })
-export class NewPollComponent implements OnInit {
+export class NewPollComponent {
   poll: Poll;
   creatingPoll: string | 'process' | '' = '';
 
@@ -64,5 +64,4 @@ export class NewPollComponent implements OnInit {
     this.poll = this.service.getEmptyPoll();
   }
 
-  ngOnInit(): void {}
 }

@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input,  } from '@angular/core';
 import {
   FormArray,
   FormBuilder,
@@ -10,7 +10,7 @@ import {
   selector: 'app-poll-option-input',
   templateUrl: './poll-option-input.component.html',
 })
-export class PollOptionInputComponent implements OnInit {
+export class PollOptionInputComponent {
   @Input()
   formControl!: FormControl;
 
@@ -51,5 +51,4 @@ export class PollOptionInputComponent implements OnInit {
 
   constructor(private fb: FormBuilder) {}
 
-  ngOnInit(): void {}
 }
