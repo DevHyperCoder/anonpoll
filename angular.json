@@ -3,7 +3,8 @@
   "version": 1,
   "newProjectRoot": "projects",
   "cli": {
-    "packageManager": "yarn"
+    "packageManager": "yarn",
+    "defaultCollection": "@angular-eslint/schematics"
   },
   "projects": {
     "anonpoll": {
@@ -110,6 +111,15 @@
             "browserTarget": "anonpoll:build:production",
             "firebaseProject": "anonpoll-dhc",
             "firebaseHostingSite": "anonpoll-dhc"
+          }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "src/**/*.ts",
+              "src/**/*.html"
+            ]
           }
         }
       }

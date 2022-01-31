@@ -1,0 +1,5 @@
+["/mnt/HDD/home/devhypercoder/Projects/angular/anonpoll"]
+build = 'ng build'
+deploy = './build.sh && firebase deploy --only hosting'
+fmt = 'prettier --write src/'
+run = 'ng serve'

@@ -1,0 +1,11 @@
+<div *ngFor="let option of optionsControls; let i = index">
+  <input type="text" [formControl]="option" placeholder="Enter option" />
+
+  <p *ngIf="option.errors?.required">Option is required</p>
+  <p *ngIf="option.errors?.minlength">Option should be atleast 5 char</p>
+
+  <button (click)="moveOptionUp(i)" type="button">Move Up</button>
+  <button (click)="moveOptionDown(i)" type="button">Move Down</button>
+</div>
+
+<button type="button" (click)="addOption()">Add Option</button>

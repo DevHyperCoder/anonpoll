@@ -1,0 +1,17 @@
+<h1>Create a new anonymous poll</h1>
+
+<form [formGroup]="pollForm" (ngSubmit)="createPoll()">
+  <app-poll-question-input
+    formControlName="question"
+    [formControl]="questionFormControl"
+    ngDefaultControl
+  >
+  </app-poll-question-input>
+
+  <app-poll-option-input formArrayName="options" [options]="options">
+  </app-poll-option-input>
+
+  <button *ngIf="creatingPoll === ''" type="submit">Create Poll</button>
+  <p *ngIf="getNewPollId">Poll created! View it here: {{ getNewPollId }}</p>
+  <p *ngIf="creatingPoll === 'process'">Creating Poll.. Please wait</p>
+</form>

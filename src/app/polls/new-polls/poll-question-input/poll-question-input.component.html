@@ -1,0 +1,11 @@
+<input
+  [formControl]="formControl"
+  type="text"
+  placeholder="Enter your
+                                                 question here"
+/>
+
+<p *ngIf="questionErrors?.required">Question is required</p>
+<p *ngIf="questionErrors?.minlength">
+  Question should be more than 5 characters
+</p>
