@@ -1,11 +1,12 @@
 <input
+  class="w-full"
   [formControl]="formControl"
   type="text"
   placeholder="Enter your
                                                  question here"
 />
 
-<p *ngIf="questionErrors?.required">Question is required</p>
-<p *ngIf="questionErrors?.minlength">
+<p class="text-red-500" *ngIf="questionErrors?.required">* Question is required</p>
+<p class="text-red-500" *ngIf="questionErrors?.minlength">
   Question should be more than 5 characters
 </p>
