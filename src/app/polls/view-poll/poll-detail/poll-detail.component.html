@@ -1,0 +1,22 @@
+<p>{{ poll.question }}</p>
+
+<div
+  class="border-black border-2"
+  *ngFor="let opt of poll.options; let i = index"
+>
+  <p>{{ opt.option }}</p>
+  <p *ngIf="voted || showResults">
+    Voted by: {{ getPollOptionPercentage(i) | number: "1.2-2" }} %
+  </p>
+  <button *ngIf="!voted" (click)="voteOption(i)">Vote!</button>
+</div>
+
+<button *ngIf="!voted && !showResults" (click)="flipShowResults()">
+  Just show me the results. i dont want to vote
+</button>
+<button *ngIf="!voted && showResults" (click)="flipShowResults()">
+  Hide results
+</button>
+
+<p *ngIf="isVoted">{{ poll.totalVotes }}</p>
+<p *ngIf="!isVoted">Poll has not yet been voted.</p>

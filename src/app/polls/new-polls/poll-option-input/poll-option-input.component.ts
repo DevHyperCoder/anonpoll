@@ -1,4 +1,4 @@
-import { Component, Input,  } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import {
   FormArray,
   FormBuilder,
@@ -50,5 +50,4 @@ export class PollOptionInputComponent {
   }
 
   constructor(private fb: FormBuilder) {}
-
 }

@@ -1,8 +1,9 @@
 <div *ngIf="loading">
-    <p>Loading ...</p>
+  <p>Loading ...</p>
 </div>
-<div *ngIf="poll">
 
-    <p >{{ poll!.question }}</p>
+<div *ngIf="poll">
+  <app-poll-detail [poll]="poll!"></app-poll-detail>
 </div>
+
 <p *ngIf="!loading && poll === undefined">Poll does not exist</p>

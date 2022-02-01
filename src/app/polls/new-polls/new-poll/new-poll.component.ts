@@ -1,4 +1,4 @@
-import { Component,  } from '@angular/core';
+import { Component } from '@angular/core';
 import {
   FormArray,
   FormBuilder,
@@ -6,7 +6,7 @@ import {
   FormGroup,
   Validators,
 } from '@angular/forms';
-import { Poll } from 'src/app/core/models/poll.model';
+import { Poll, PollOption } from 'src/app/core/models/poll.model';
 import { PollService } from '../../poll.service';
 
 @Component({
@@ -55,7 +55,14 @@ export class NewPollComponent {
       errors,
     });
 
-    this.poll = value;
+    value.options = value.options.map((a: string) => {
+      return {
+        option: a,
+        votes: 0,
+      };
+    });
+
+    this.poll = { ...value };
     const doc = await this.service.createPoll(this.poll);
     this.creatingPoll = doc.id;
   }
@@ -63,5 +70,4 @@ export class NewPollComponent {
   constructor(private service: PollService, private fb: FormBuilder) {
     this.poll = this.service.getEmptyPoll();
   }
-
 }

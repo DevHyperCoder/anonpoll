@@ -1,10 +1,11 @@
 export interface Poll {
+  pollId?: string;
   question: string;
-  totalVotes?: number;
+  totalVotes: number;
   options: PollOption[];
 }
 
 export interface PollOption {
   option: string;
-  votes?: number;
+  votes: number;
 }

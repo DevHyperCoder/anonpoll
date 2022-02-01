@@ -1,4 +1,4 @@
-import { Component, Input,  } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 
 @Component({
@@ -14,5 +14,4 @@ export class PollQuestionInputComponent {
   }
 
   constructor() {}
-
 }
