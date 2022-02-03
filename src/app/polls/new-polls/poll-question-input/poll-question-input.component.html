@@ -1,12 +1,23 @@
-<input
-  class="w-full"
-  [formControl]="formControl"
-  type="text"
-  placeholder="Enter your
-                                                 question here"
-/>
+<label class="my-4 w-full block">
+  <span class="text-xl font-bold text-grey-800">Question</span>
+  <input
+    class="
+      block
+      w-full
+      border-0 border-b-2 border-grey-500
+      focus:ring-0 focus:border-black
+      px-0.5
+    "
+    [formControl]="formControl"
+    type="text"
+    placeholder="Enter your question here"
+  />
 
-<p class="text-red-500" *ngIf="questionErrors?.required">* Question is required</p>
-<p class="text-red-500" *ngIf="questionErrors?.minlength">
-  Question should be more than 5 characters
-</p>
+  <form-error content="Question is required" *ngIf="questionErrors?.required">
+  </form-error>
+  <form-error
+    content="Question should be more than 5 characters"
+    *ngIf="questionErrors?.minlength"
+  >
+  </form-error>
+</label>

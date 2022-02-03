@@ -1,4 +1,4 @@
-<h1 class="text-amber-400 text-center text-5xl">Create a new anonymous poll</h1>
+<h1 class="my-4 text-center text-slate-600 font-bold text-3xl">Create a new anonymous poll</h1>
 
 <form [formGroup]="pollForm" (ngSubmit)="createPoll()">
   <app-poll-question-input
@@ -11,7 +11,48 @@
   <app-poll-option-input formArrayName="options" [options]="options">
   </app-poll-option-input>
 
-  <button *ngIf="creatingPoll === ''" type="submit">Create Poll</button>
-  <p *ngIf="getNewPollId">Poll created! View it here: {{ getNewPollId }}</p>
-  <p *ngIf="creatingPoll === 'process'">Creating Poll.. Please wait</p>
+  <button
+    class="py-2 px-4 rounded-md bg-blue-500 text-white font-bold"
+    *ngIf="creatingPoll === ''"
+    type="submit"
+  >
+    Create Poll
+  </button>
+
+  <p
+    class="mt-4 text-center font-bold text-xl text-gray-600"
+    *ngIf="getNewPollId"
+  >
+    Poll created!
+    <br />
+
+    <span class="mt-2 grid grid-cols-2 gap-3">
+      <a class="justify-self-end text-blue-500" href="{{ createdPollLink }}"
+        >View</a
+      >
+      <div class="w-8 h-8 justify-self-start"></div>
+
+      <a
+        (click)="copyNewPollLocationToClipboard()"
+        class="justify-self-end text-blue-500"
+        >Copy</a
+      >
+      <img
+        (click)="copyNewPollLocationToClipboard()"
+        class="w-8 h-8 justify-self-start"
+        src="https://img.icons8.com/external-becris-lineal-becris/64/000000/external-copy-mintab-for-ios-becris-lineal-becris.png"
+      />
+    </span>
+
+    <!--{{ getNewPollId }}-->
+  </p>
+
+  <div
+    *ngIf="creatingPoll === 'process'"
+    class="w-full flex justify-center align-center"
+  >
+    <app-loading-spinner>
+      <p class="font-bold text-xl text-gray-600">Creating Poll...</p>
+    </app-loading-spinner>
+  </div>
 </form>

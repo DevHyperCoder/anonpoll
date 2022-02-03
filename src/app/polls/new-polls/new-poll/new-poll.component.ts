@@ -3,10 +3,9 @@ import {
   FormArray,
   FormBuilder,
   FormControl,
-  FormGroup,
   Validators,
 } from '@angular/forms';
-import { Poll, PollOption } from 'src/app/core/models/poll.model';
+import { ClipboardService } from 'ngx-clipboard';
 import { PollService } from '../../poll.service';
 
 @Component({
@@ -14,15 +13,10 @@ import { PollService } from '../../poll.service';
   templateUrl: './new-poll.component.html',
 })
 export class NewPollComponent {
-  poll: Poll;
+  poll = this.service.getEmptyPoll();
   creatingPoll: string | 'process' | '' = '';
+  currentLocation = window.location.origin;
 
-  get getNewPollId() {
-    if (this.creatingPoll === '' || this.creatingPoll === 'process') {
-      return undefined;
-    }
-    return this.creatingPoll;
-  }
 
   pollForm = this.fb.group({
     question: this.fb.control('', [
@@ -33,6 +27,13 @@ export class NewPollComponent {
       this.fb.control('', [Validators.required, Validators.minLength(5)]),
     ]),
   });
+
+  get getNewPollId() {
+    if (this.creatingPoll === '' || this.creatingPoll === 'process') {
+      return undefined;
+    }
+    return this.creatingPoll;
+  }
 
   get questionFormControl() {
     return this.pollForm.get('question') as FormControl;
@@ -67,7 +68,17 @@ export class NewPollComponent {
     this.creatingPoll = doc.id;
   }
 
-  constructor(private service: PollService, private fb: FormBuilder) {
-    this.poll = this.service.getEmptyPoll();
+  constructor(
+    private service: PollService,
+    private fb: FormBuilder,
+    private clipboard: ClipboardService
+  ) {}
+
+  get createdPollLink() {
+    return `${this.currentLocation}/poll/${this.creatingPoll}`;
+  }
+
+  copyNewPollLocationToClipboard() {
+    this.clipboard.copy(this.createdPollLink);
   }
 }

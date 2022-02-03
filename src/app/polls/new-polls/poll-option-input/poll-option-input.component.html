@@ -1,11 +1,67 @@
-<div *ngFor="let option of optionsControls; let i = index">
-  <input type="text" [formControl]="option" placeholder="Enter option" />
+<div
+  class="grid grid-cols-2 my-8"
+  *ngFor="let option of optionsControls; let i = index"
+>
+  <div>
+    <input
+      class="
+        block
+        w-full
+        border-0 border-b-2 border-grey-500
+        focus:ring-0 focus:border-black
+        px-0.5
+        w-full
+      "
+      type="text"
+      [formControl]="option"
+      placeholder="Enter option"
+    />
 
-  <p *ngIf="option.errors?.required">Option is required</p>
-  <p *ngIf="option.errors?.minlength">Option should be atleast 5 char</p>
+    <!-- TODO  move to sep component -->
 
-  <button (click)="moveOptionUp(i)" type="button">Move Up</button>
-  <button (click)="moveOptionDown(i)" type="button">Move Down</button>
+    <form-error
+      *ngIf="option.errors?.required"
+      content="Option is required"
+    ></form-error>
+    <form-error
+      *ngIf="option.errors?.minlength"
+      content="Option should be atleast 5 char"
+    ></form-error>
+  </div>
+
+  <div class="flex justify-end gap-3">
+    <button
+      class="h-min bg-blue-500 text-white px-4 py-2 rounded-sm"
+      (click)="moveOptionUp(i)"
+      type="button"
+    >
+      ▲
+    </button>
+    <button
+      class="h-min bg-blue-500 text-white px-4 py-2 rounded-sm"
+      (click)="moveOptionDown(i)"
+      type="button"
+    >
+      ▼
+    </button>
+  </div>
 </div>
 
-<button type="button" (click)="addOption()">Add Option</button>
+<button
+  class="
+    block
+    ml-auto
+    mt-4
+    w-8
+    h-8
+    bg-blue-500
+    text-white
+    font-bold
+    text-2xl
+    rounded-full
+  "
+  type="button"
+  (click)="addOption()"
+>
+  +
+</button>
