@@ -7,7 +7,12 @@ import { environment } from '../environments/environment';
 import { HomeModule } from './home/home.module';
 import { PollsModule } from './polls/polls.module';
 import { AngularFireModule } from '@angular/fire/compat';
-import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import {
+  AngularFirestoreModule,
+  USE_EMULATOR as USE_FIREBASE_EMULATOR,
+} from '@angular/fire/compat/firestore';
+
+console.log(environment);
 
 @NgModule({
   declarations: [AppComponent],
@@ -21,7 +26,14 @@ import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
     HomeModule,
     PollsModule,
   ],
-  providers: [],
+  providers: [
+    {
+      provide: USE_FIREBASE_EMULATOR,
+      useValue: environment.useFirebaseEmulators
+        ? ['localhost', 8080]
+        : undefined,
+    },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

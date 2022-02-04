@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Observable } from 'rxjs';
 import { Poll } from 'src/app/core/models/poll.model';
 import { PollService } from '../../poll.service';
 

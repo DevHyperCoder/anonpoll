@@ -1,22 +1,24 @@
-<p>{{ poll.question }}</p>
+<h3 class="my-4 text-slate-700 text-3xl font-bold">{{ poll.question }}</h3>
 
-<div
-  class="border-black border-2"
-  *ngFor="let opt of poll.options; let i = index"
->
-  <p>{{ opt.option }}</p>
-  <p *ngIf="voted || showResults">
-    Voted by: {{ getPollOptionPercentage(i) | number: "1.2-2" }} %
-  </p>
-  <button *ngIf="!voted" (click)="voteOption(i)">Vote!</button>
+<div class="drop-shadow-xl my-2 border border-3 border-grey-700 p-2" *ngFor="let opt of poll.options; let i = index">
+  <div class="flex align-center justify-between">
+    <p class="text-xl my-auto">{{ opt.option }}</p>
+    <button class="py-2 px-4 rounded-md bg-blue-500 text-white font-bold" *ngIf="!voted && !showResults"
+      (click)="voteOption(i)">
+      Vote!
+    </button>
+    <p class="py-2 text-gray-400" *ngIf="voted || showResults">
+      Voted by: {{ getPollOptionPercentage(i) | number: "1.2-2" }} %
+    </p>
+  </div>
 </div>
 
-<button *ngIf="!voted && !showResults" (click)="flipShowResults()">
-  Just show me the results. i dont want to vote
+<button class="text-blue-500" *ngIf="!voted && !showResults" (click)="flipShowResults()">
+  Show results
 </button>
-<button *ngIf="!voted && showResults" (click)="flipShowResults()">
+<button class="text-blue-500" *ngIf="!voted && showResults" (click)="flipShowResults()">
   Hide results
 </button>
 
-<p *ngIf="isVoted">{{ poll.totalVotes }}</p>
-<p *ngIf="!isVoted">Poll has not yet been voted.</p>
+<p class="text-gray-400" *ngIf="isVoted">Poll has been voted by {{ poll.totalVotes }} anonymous visitors</p>
+<p class="text-gray-400" *ngIf="!isVoted">Poll has not yet been anonymously voted.</p>

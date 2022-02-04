@@ -7,7 +7,7 @@ import { increment } from 'firebase/firestore';
   providedIn: 'root',
 })
 export class PollService {
-  constructor(private afs: AngularFirestore) {}
+  constructor(private afs: AngularFirestore) { }
 
   getEmptyPoll(): Poll {
     return {

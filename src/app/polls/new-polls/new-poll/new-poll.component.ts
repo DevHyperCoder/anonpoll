@@ -17,7 +17,6 @@ export class NewPollComponent {
   creatingPoll: string | 'process' | '' = '';
   currentLocation = window.location.origin;
 
-
   pollForm = this.fb.group({
     question: this.fb.control('', [
       Validators.required,
