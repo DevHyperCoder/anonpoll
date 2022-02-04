@@ -1,10 +1,29 @@
-<h3 class="my-4 text-slate-700 text-3xl font-bold">{{ poll.question }}</h3>
+<h3 class="my-4 text-slate-700 text-xl lg:text-3xl font-bold">
+  {{ poll.question }}
+</h3>
 
-<div class="drop-shadow-xl my-2 border border-3 border-grey-700 p-2" *ngFor="let opt of poll.options; let i = index">
+<div
+  class="drop-shadow-xl my-2 border border-3 border-grey-700 p-2"
+  *ngFor="let opt of poll.options; let i = index"
+>
   <div class="flex align-center justify-between">
-    <p class="text-xl my-auto">{{ opt.option }}</p>
-    <button class="py-2 px-4 rounded-md bg-blue-500 text-white font-bold" *ngIf="!voted && !showResults"
-      (click)="voteOption(i)">
+    <p class="text-xl my-auto">
+      {{ opt.option }}
+    </p>
+    <button
+      class="
+        py-2
+        px-4
+        rounded-md
+        bg-blue-500
+        text-white
+        font-bold
+        my-auto
+        h-min
+      "
+      *ngIf="!voted && !showResults"
+      (click)="voteOption(i)"
+    >
       Vote!
     </button>
     <p class="py-2 text-gray-400" *ngIf="voted || showResults">
@@ -13,12 +32,24 @@
   </div>
 </div>
 
-<button class="text-blue-500" *ngIf="!voted && !showResults" (click)="flipShowResults()">
+<button
+  class="text-blue-500"
+  *ngIf="!voted && !showResults"
+  (click)="flipShowResults()"
+>
   Show results
 </button>
-<button class="text-blue-500" *ngIf="!voted && showResults" (click)="flipShowResults()">
+<button
+  class="text-blue-500"
+  *ngIf="!voted && showResults"
+  (click)="flipShowResults()"
+>
   Hide results
 </button>
 
-<p class="text-gray-400" *ngIf="isVoted">Poll has been voted by {{ poll.totalVotes }} anonymous visitors</p>
-<p class="text-gray-400" *ngIf="!isVoted">Poll has not yet been anonymously voted.</p>
+<p class="text-gray-400" *ngIf="isVoted">
+  Poll has been voted by {{ poll.totalVotes }} anonymous visitors
+</p>
+<p class="text-gray-400" *ngIf="!isVoted">
+  Poll has not yet been anonymously voted.
+</p>
