@@ -23,6 +23,14 @@ export class PollOptionInputComponent {
     );
   }
 
+  canMoveUp(i: number) {
+    return i !== 0 
+  }
+
+  canMoveDown(i: number) {
+    return i < this.options.length -1
+  }
+
   moveOptionUp(i: number) {
     this.move(i, -1);
   }
