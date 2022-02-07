@@ -31,6 +31,15 @@ export class PollOptionInputComponent {
     return i < this.options.length -1
   }
 
+  get canDelete()  {
+    return this.options.length > 2
+  }
+
+  deleteOption(i: number) {
+    if (!this.canDelete) return;
+    this.options.removeAt(i)
+  }
+
   moveOptionUp(i: number) {
     this.move(i, -1);
   }
