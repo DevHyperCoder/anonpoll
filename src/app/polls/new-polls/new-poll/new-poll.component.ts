@@ -18,12 +18,13 @@ export class NewPollComponent {
   currentLocation = window.location.origin;
 
   pollForm = this.fb.group({
-    question: this.fb.control('', [
+    question: this.fb.control('Anonymous Poll', [
       Validators.required,
       Validators.minLength(5),
     ]),
     options: this.fb.array([
-      this.fb.control('', [Validators.required, Validators.minLength(5)]),
+      this.fb.control('Option 1', [Validators.required]),
+      this.fb.control('Option 2', [Validators.required]),
     ]),
   });
 
@@ -36,10 +37,6 @@ export class NewPollComponent {
 
   get questionFormControl() {
     return this.pollForm.get('question') as FormControl;
-  }
-
-  get optionFormControl() {
-    return this.pollForm.get('options') as FormControl;
   }
 
   get options() {

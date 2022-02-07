@@ -17,15 +17,9 @@
       placeholder="Enter option"
     />
 
-    <!-- TODO  move to sep component -->
-
     <form-error
       *ngIf="option.errors?.required"
       content="Option is required"
-    ></form-error>
-    <form-error
-      *ngIf="option.errors?.minlength"
-      content="Option should be atleast 5 char"
     ></form-error>
   </div>
 
