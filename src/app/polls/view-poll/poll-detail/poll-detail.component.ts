@@ -13,6 +13,10 @@ export class PollDetailComponent {
   voted = false;
   showResults = false;
 
+  get canVote() {
+    return !this.voted && !this.showResults
+  }
+
   selectedOption?: PollOption;
 
   constructor(private service: PollService) {}
@@ -44,6 +48,8 @@ export class PollDetailComponent {
   }
 
   voteOption(idx: number) {
+    if (!this.canVote) return
+
     this.voted = true;
     this.service.votePoll(this.poll, idx);
   }
