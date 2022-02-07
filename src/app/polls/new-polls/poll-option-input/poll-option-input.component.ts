@@ -19,7 +19,7 @@ export class PollOptionInputComponent {
 
   addOption() {
     this.options.push(
-      this.fb.control('', [Validators.required, Validators.minLength(5)])
+      this.fb.control(`Option ${this.options.length + 1}`, [Validators.required])
     );
   }
 
