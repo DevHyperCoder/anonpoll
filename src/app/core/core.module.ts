@@ -8,4 +8,4 @@ import { WidthDirective } from './width.directive';
   imports: [CommonModule],
   exports: [LoadingSpinnerComponent, WidthDirective],
 })
-export class CoreModule { }
+export class CoreModule {}

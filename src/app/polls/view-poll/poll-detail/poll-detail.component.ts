@@ -14,7 +14,7 @@ export class PollDetailComponent {
   showResults = false;
 
   get canVote() {
-    return !this.voted && !this.showResults
+    return !this.voted && !this.showResults;
   }
 
   selectedOption?: PollOption;
@@ -48,7 +48,7 @@ export class PollDetailComponent {
   }
 
   voteOption(idx: number) {
-    if (!this.canVote) return
+    if (!this.canVote) return;
 
     this.voted = true;
     this.service.votePoll(this.poll, idx);

@@ -19,25 +19,27 @@ export class PollOptionInputComponent {
 
   addOption() {
     this.options.push(
-      this.fb.control(`Option ${this.options.length + 1}`, [Validators.required])
+      this.fb.control(`Option ${this.options.length + 1}`, [
+        Validators.required,
+      ])
     );
   }
 
   canMoveUp(i: number) {
-    return i !== 0 
+    return i !== 0;
   }
 
   canMoveDown(i: number) {
-    return i < this.options.length -1
+    return i < this.options.length - 1;
   }
 
-  get canDelete()  {
-    return this.options.length > 2
+  get canDelete() {
+    return this.options.length > 2;
   }
 
   deleteOption(i: number) {
     if (!this.canDelete) return;
-    this.options.removeAt(i)
+    this.options.removeAt(i);
   }
 
   moveOptionUp(i: number) {

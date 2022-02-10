@@ -1,9 +1,11 @@
-<div *ngIf="loading">
-  <p>Loading ...</p>
-</div>
+<main class="mx-3 md:mx-16 lg:mx-32 xl:mx-96">
+  <div *ngIf="loading">
+    <p>Loading ...</p>
+  </div>
 
-<div *ngIf="poll">
-  <app-poll-detail [poll]="poll!"></app-poll-detail>
-</div>
+  <div *ngIf="poll">
+    <app-poll-detail [poll]="poll!"></app-poll-detail>
+  </div>
 
-<p *ngIf="!loading && poll === undefined">Poll does not exist</p>
+  <p *ngIf="!loading && poll === undefined">Poll does not exist</p>
+</main>

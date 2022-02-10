@@ -8,4 +8,4 @@ import { CoreModule } from 'src/app/core/core.module';
   declarations: [ViewPollComponent, PollDetailComponent],
   imports: [CoreModule, CommonModule],
 })
-export class ViewPollModule { }
+export class ViewPollModule {}

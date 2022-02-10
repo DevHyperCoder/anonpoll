@@ -24,14 +24,20 @@
   </div>
 
   <div class="flex justify-end gap-3">
-    <button class="h-min {{ canDelete ? 'bg-blue-500' : 'bg-red-500' }} text-white px-4 py-2 rounded-sm"
+    <button
+      class="h-min {{
+        canDelete ? 'bg-blue-500' : 'bg-red-500'
+      }} text-white px-4 py-2 rounded-sm"
       (click)="deleteOption(i)"
       [disabled]="!canDelete"
-      type="button">
+      type="button"
+    >
       X
     </button>
     <button
-      class="h-min {{ canMoveUp(i) ? 'bg-blue-500' : 'bg-red-500' }} text-white px-4 py-2 rounded-sm"
+      class="h-min {{
+        canMoveUp(i) ? 'bg-blue-500' : 'bg-red-500'
+      }} text-white px-4 py-2 rounded-sm"
       (click)="moveOptionUp(i)"
       [disabled]="!canMoveUp(i)"
       type="button"
@@ -39,7 +45,9 @@
       ▲
     </button>
     <button
-      class="h-min {{ canMoveDown(i) ? 'bg-blue-500' : 'bg-red-500' }} text-white px-4 py-2 rounded-sm"
+      class="h-min {{
+        canMoveDown(i) ? 'bg-blue-500' : 'bg-red-500'
+      }} text-white px-4 py-2 rounded-sm"
       (click)="moveOptionDown(i)"
       [disabled]="!canMoveDown(i)"
       type="button"

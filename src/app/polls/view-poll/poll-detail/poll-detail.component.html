@@ -2,29 +2,45 @@
   {{ poll.question }}
 </h3>
 
-<div (click)="voteOption(i)" class="{{ canVote ? 'hover:bg-gray-100' : '' }} relative drop-shadow-xl my-2 border border-3 border-grey-700 p-2 {{ canVote ? 'cursor-pointer' : '' }}"
-  *ngFor="let opt of poll.options; let i = index">
-
-  <div class=" z-10 align-center justify-between">
+<div
+  (click)="voteOption(i)"
+  class="{{
+    canVote ? 'hover:bg-gray-100' : ''
+  }} relative drop-shadow-xl my-2 border border-3 border-grey-700 p-2 {{
+    canVote ? 'cursor-pointer' : ''
+  }}"
+  *ngFor="let opt of poll.options; let i = index"
+>
+  <div class="z-10 align-center justify-between">
     <p class="text-black text-xl my-auto">
       {{ opt.option }}
     </p>
   </div>
 
-  <div *ngIf="voted || showResults" class="w-full h-full  -z-10">
-    <div class="bg-blue-500 absolute h-full top-0 left-0 bg-opacity-50 " [width]="getPollOptionPercentage(i)">
+  <div *ngIf="voted || showResults" class="w-full h-full -z-10">
+    <div
+      class="bg-blue-500 absolute h-full top-0 left-0 bg-opacity-50"
+      [width]="getPollOptionPercentage(i)"
+    >
       <p class="h-full flex justify-end items-center text-slate-500">
-        {{getPollOptionPercentage(i) | number: "1.2-2" }} %
+        {{ getPollOptionPercentage(i) | number: "1.2-2" }} %
       </p>
     </div>
   </div>
-
 </div>
 
-<button class=" text-blue-500" *ngIf="!voted && !showResults" (click)="flipShowResults()">
+<button
+  class="text-blue-500"
+  *ngIf="!voted && !showResults"
+  (click)="flipShowResults()"
+>
   Show results
 </button>
-<button class="text-blue-500" *ngIf="!voted && showResults" (click)="flipShowResults()">
+<button
+  class="text-blue-500"
+  *ngIf="!voted && showResults"
+  (click)="flipShowResults()"
+>
   Hide results
 </button>
 
