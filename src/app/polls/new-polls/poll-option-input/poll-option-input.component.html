@@ -1,5 +1,7 @@
 <div
-  class="grid grid-cols-1 lg:grid-cols-2 my-8"
+  class="grid grid-cols-1 lg:grid-cols-2 my-8
+bg-white px-16 py-5 drop-shadow-xl
+  "
   *ngFor="let option of optionsControls; let i = index"
 >
   <div>
@@ -35,7 +37,7 @@
       X
     </button>
     <button
-      class="h-min {{
+      class=" h-min {{
         canMoveUp(i) ? 'bg-blue-500' : 'bg-red-500'
       }} text-white px-4 py-2 rounded-sm"
       (click)="moveOptionUp(i)"
