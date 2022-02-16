@@ -4,6 +4,8 @@ Anonpoll allows you to ask and share your opinons anonymously, without being
 cancelled. Built with [Angular](https://angular.io/) and
 [Firebase](https://firebase.google.com/).
 
+See hosted version on [firebase](https://anonpoll-dhc.web.app/)
+
 ## Screenshots
 TBD
 
