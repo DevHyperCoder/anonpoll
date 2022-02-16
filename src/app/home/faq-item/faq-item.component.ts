@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import {Faq} from 'src/app/core/models/faq.model';
+import { Faq } from 'src/app/core/models/faq.model';
 
 @Component({
   selector: 'app-faq-item',
@@ -8,7 +8,7 @@ import {Faq} from 'src/app/core/models/faq.model';
 })
 export class FaqItemComponent implements OnInit {
   @Input()
-  faq!: Faq
+  faq!: Faq;
 
   constructor() {}
 

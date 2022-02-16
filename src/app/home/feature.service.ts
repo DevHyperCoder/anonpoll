@@ -1,23 +1,22 @@
 import { Injectable } from '@angular/core';
-import {Feature} from '../core/models/feature.model';
+import { Feature } from '../core/models/feature.model';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class FeatureService {
-
-  constructor() { }
+  constructor() {}
 
   get features(): Feature[] {
     return [
       {
-        imgName: "anonymous.svg",
-        text: "Ask and share anonymously"
+        imgName: 'anonymous.svg',
+        text: 'Ask and share anonymously',
       },
       {
-        imgName: "chart.svg",
-        text: "Live updates"
+        imgName: 'chart.svg',
+        text: 'Live updates',
       },
-    ]
+    ];
   }
 }

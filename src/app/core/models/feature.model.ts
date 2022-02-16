@@ -1,4 +1,4 @@
 export interface Feature {
-    imgName: string,
-    text:string
+  imgName: string;
+  text: string;
 }
