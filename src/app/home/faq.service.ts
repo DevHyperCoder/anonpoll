@@ -17,14 +17,6 @@ export class FaqService {
         question: 'Does anonpoll collect user data',
         answer: 'No it does not! Our code is on github if you want to check',
       },
-      {
-        question: 'Does anonpoll collect user data',
-        answer: 'No it does not! Our code is on github if you want to check',
-      },
-      {
-        question: 'Does anonpoll collect user data',
-        answer: 'No it does not! Our code is on github if you want to check',
-      },
     ];
   }
 }

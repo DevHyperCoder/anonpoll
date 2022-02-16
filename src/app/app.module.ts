@@ -11,6 +11,7 @@ import {
   AngularFirestoreModule,
   USE_EMULATOR as USE_FIREBASE_EMULATOR,
 } from '@angular/fire/compat/firestore';
+import {CoreModule} from './core/core.module';
 
 console.log(environment);
 
@@ -23,6 +24,7 @@ console.log(environment);
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
 
+    CoreModule,
     HomeModule,
     PollsModule,
   ],
