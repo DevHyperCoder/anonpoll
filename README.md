@@ -7,7 +7,10 @@ cancelled. Built with [Angular](https://angular.io/) and
 See hosted version on [firebase](https://anonpoll-dhc.web.app/)
 
 ## Screenshots
-TBD
+
+![`Anonpoll` Home](./res/anonpoll-home.png)
+![`Anonpoll` Creating a new poll](./res/anonpoll-new.png)
+![`Anonpoll` Viewing the result](./res/anonpoll-result.png)
 
 ## LICENSE
 
