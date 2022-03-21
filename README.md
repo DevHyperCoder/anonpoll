@@ -6,11 +6,23 @@ cancelled. Built with [Angular](https://angular.io/) and
 
 See hosted version on [firebase](https://anonpoll-dhc.web.app/)
 
+## Features
+
+- No accounts required
+- Create poll
+- Vote on poll
+- See results of poll
+
 ## Screenshots
 
 ![`Anonpoll` Home](./res/anonpoll-home.png)
 ![`Anonpoll` Creating a new poll](./res/anonpoll-new.png)
 ![`Anonpoll` Viewing the result](./res/anonpoll-result.png)
+
+## Running locally
+
+- `ng serve`: Start the angular application
+- `firebase emulators:start`: Start firebase emulators
 
 ## LICENSE
 
