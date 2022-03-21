@@ -1,6 +1,6 @@
 # Anonpoll
 
-Anonpoll allows you to ask and share your opinons anonymously, without being
+Anonpoll allows you to ask and share your opinions anonymously, without being
 cancelled. Built with [Angular](https://angular.io/) and
 [Firebase](https://firebase.google.com/).
 
