@@ -15,7 +15,8 @@ export class FaqService {
       },
       {
         question: 'Can a poll have multiple questions ?',
-        answer: 'No. That would be a survey. A survey app might be coming soon!',
+        answer:
+          'No. That would be a survey. A survey app might be coming soon!',
       },
     ];
   }

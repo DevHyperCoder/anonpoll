@@ -7,6 +7,6 @@ import { FooterComponent } from './footer/footer.component';
 @NgModule({
   declarations: [LoadingSpinnerComponent, WidthDirective, FooterComponent],
   imports: [CommonModule],
-  exports: [LoadingSpinnerComponent, WidthDirective,FooterComponent],
+  exports: [LoadingSpinnerComponent, WidthDirective, FooterComponent],
 })
 export class CoreModule {}

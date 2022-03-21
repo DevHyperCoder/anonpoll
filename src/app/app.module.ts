@@ -11,7 +11,7 @@ import {
   AngularFirestoreModule,
   USE_EMULATOR as USE_FIREBASE_EMULATOR,
 } from '@angular/fire/compat/firestore';
-import {CoreModule} from './core/core.module';
+import { CoreModule } from './core/core.module';
 
 console.log(environment);
 

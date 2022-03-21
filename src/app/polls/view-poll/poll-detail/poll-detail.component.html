@@ -2,7 +2,10 @@
   {{ poll.question }}
 </h3>
 
-<div class="flex items-center gap-3" *ngFor="let opt of poll.options; let i = index">
+<div
+  class="flex items-center gap-3"
+  *ngFor="let opt of poll.options; let i = index"
+>
   <div
     (click)="voteOption(i)"
     class="flex-1  {{
